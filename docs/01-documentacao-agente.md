@@ -5,12 +5,12 @@
 ### Problema
 > Qual problema financeiro seu agente resolve?
 
-Este agente tem como propósito medir a temperatura de um determinado ativo financeiro baseado nas notícias e na tendência recente do mesmo.
+Este agente tem como propósito coletar notícias de um determinado ativo financeiro e exibir resumos ou uma breve análise das notícias.
 
 ### Solução
 > Como o agente resolve esse problema de forma proativa?
 
-O agente irá utilizar base de dados financeiros e notícias gerais relacionadas com esses ativos
+O agente irá utilizar a base de notícias financeiras do pacote yfinance.
 
 ### Público-Alvo
 > Quem vai usar esse agente?
@@ -61,7 +61,7 @@ flowchart TD
 |------------|-----------|
 | Interface | Chatbot em Streamlit |
 | LLM | Qwen3:8B no Ollama |
-| Base de Conhecimento | Dados de notícias e de ativos no geral do mercado financeiro |
+| Base de Conhecimento | Notícias do mercado financeiro pela biblioteca yfinance|
 
 ---
 
