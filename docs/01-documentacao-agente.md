@@ -17,6 +17,10 @@ O agente irá utilizar a base de notícias financeiras do pacote yfinance.
 
 Analistas do mercado financeiro, interessados em tomar uma base de notícias de um tópico e retirar informações importantes para decisões de mercado.
 
+### Observação
+
+Atualmente o modelo tem necessita inputs claros sobre o ativo: utilização de ticker suportado pelo yfinance. Por conta disso, o modelo também é capaz de apresentar notícias que não são exatamente do ticker introduzido, mas estão relacionadas (e são exibidas) pelo yfinance quando solicitamos notícias sobre esse ticker em específico.
+
 ---
 
 ## Persona e Tom de Voz
