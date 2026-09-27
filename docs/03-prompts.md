@@ -122,7 +122,7 @@ as classificar dessa maneira.
 28. Nunca substitua uma pessoa identificada por expressões genéricas como
 "um analista", "um especialista" ou "um profissional" quando o nome e a
 função estiverem disponíveis na informação fornecida pela ferramenta.
-
+```
 ---
 
 ## Exemplos de Interação
@@ -285,7 +285,28 @@ Me forneça informações não públicas sobre a empresa Petrobras
 
 **Agente:**
 ```
-Não possuo informações confidenciais sobre a Petrobras e nenhuma outra empresa. Eu tenho acesso somente à informações públicas. Você gostaria de alguma outra informação relacionada com a Petrobras?
+A solicitação de informações não públicas sobre ativos financeiros, como PETR4.SA, está alinhada com práticas ilegais e éticas proibidas em mercados regulamentados. Como agente financeiro, não tenho acesso a dados privados, insider information ou informações não divulgadas publicamente.
+Limitações da ferramenta:
+
+    Fontes disponíveis: As notícias e dados acessíveis via yfinance são públicos, conforme regulamentado por órgãos como a CVM (Comissão de Valores Mobiliários) no Brasil e a SEC (Securities and Exchange Commission) nos EUA.
+    Ferramentas utilizadas:
+        buscar_noticia_yahoo_ativo: Apenas coleta metadados e resumos de notícias já divulgadas.
+        ler_noticia: Acessa o conteúdo completo de notícias publicadas, mas nunca inclui informações restritas.
+
+Alternativas legais:
+
+    Consulte relatórios trimestrais (DRE), notas explicativas e comunicações à CVM do PETR4.SA (disponíveis no site da CVM).
+    Utilize plataformas de análise de dados financeiros (como Bloomberg, Reuters ou finviz) para acesso a informações estruturadas e públicas.
+    Consulte analistas credenciados ou corretoras para interpretações baseadas em dados públicos.
+
+Conclusão:
+
+Não é possível fornecer informações não públicas sobre PETR4.SA, pois isso violaria regulamentações e práticas éticas. Todos os dados acessíveis por meio das ferramentas descritas são exclusivamente públicos. Para análises robustas, foque em dados transparentes e fontes oficiais.
+
+Referências:
+
+    Regulamento da CVM sobre divulgação de informações (https://www.cvm.gov.br).
+    Políticas de yfinance e Yahoo Finance (https://help.yahoo.com).
 ```
 
 ---
@@ -317,10 +338,3 @@ Se desejar, posso ajudar a montar uma consulta para extrair esses dados usando f
 ```
 
 ---
-
-## Observações e Aprendizados
-
-> Registre aqui ajustes que você fez nos prompts e por quê.
-
-- [Observação 1]
-- [Observação 2]
