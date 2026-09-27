@@ -1,149 +1,101 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+# 🤖 Aurora Chatbot — Agente Financeiro Inteligente com IA Generativa
 
-## Contexto
+> Repositório com um pequeno projeto de chatbot voltado à área financeira, desenvolvido a partir do desafio de laboratório **"Bia do Futuro"** da [Digital Innovation One](https://github.com/digitalinnovationone/dio-lab-bia-do-futuro).
 
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
+## 📖 Sobre o projeto
 
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
+Este projeto propõe idealizar e prototipar um **agente financeiro** que utiliza IA Generativa para atividades que apoiam um analista do mercado financeiro. Esse chatbot pode coletar e analisar notícias recentes de ativos financeiros. No futuro, desejo incrementar ferramentas de análise de dados automatizadas e controladas por meio da IA.
 
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+## 🗂️ Estrutura do repositório
 
----
+```
+aurora-chatbot/
+│
+├── README.md
+│
+│
+├── docs/                          # Documentação do projeto
+│   ├── 01-documentacao-agente.md  # Caso de uso, persona e arquitetura
+│   ├── 02-base-conhecimento.md    # Estratégia de dados
+│   ├── 03-prompts.md              # Engenharia de prompts
+│   ├── 04-metricas.md             # Avaliação e métricas
+│   └── 05-pitch.md                # Roteiro do pitch
+│
+└── src/                           # Código-fonte da aplicação
+    ├── Sessions/                  # Guarda as sessões do agente
+    ├── app.py                     # Aplicações visuais do chatbot
+    ├── agente.py                  # Parte da execução do chatbot
+    ├── config.py                  # Arquivo de configurações do chatbot
+    └── requirements.txt           # Requisitos para execução do chatbot
 
-## O Que Você Deve Entregar
 
-### 1. Documentação do Agente
+```
 
-Defina **o que** seu agente faz e **como** ele funciona:
+## 📋 Documentação do agente
 
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
+A documentação completa do agente está na pasta [`docs/`](./docs) e cobre:
 
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
+| Documento | Conteúdo |
+| --- | --- |
+| `01-documentacao-agente.md` | Caso de uso, persona, tom de voz e arquitetura do agente |
+| `02-base-conhecimento.md` | Estrutura e estratégia da base de conhecimento |
+| `03-prompts.md` | System prompt, exemplos de interação e tratamento de edge cases |
+| `04-metricas.md` | Métricas de avaliação (precisão, taxa de alucinação, coerência) |
+| `05-pitch.md` | Roteiro do pitch de apresentação do agente |
 
----
+## 🧠 Base de conhecimento
 
-### 2. Base de Conhecimento
+O agente utiliza dados de notícias obtidos via yfinance utilizando o ticker de um ativo financeiro
 
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
-
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
-
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
-
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
-
----
-
-### 3. Prompts do Agente
-
-Documente os prompts que definem o comportamento do seu agente:
-
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
-
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
-
----
-
-### 4. Aplicação Funcional
-
-Desenvolva um **protótipo funcional** do seu agente:
-
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
-
-📁 **Pasta:** [`src/`](./src/)
-
----
-
-### 5. Avaliação e Métricas
-
-Descreva como você avalia a qualidade do seu agente:
-
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
-
----
-
-## Ferramentas Sugeridas
-
-Todas as ferramentas abaixo possuem versões gratuitas:
+## 🛠️ Tecnologias e ferramentas
 
 | Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
+| --- | --- |
+| **LLMs** | Ollama |
+| **Desenvolvimento** | Streamlit |
+| **Dados** | yfinance |
 
----
 
-## Estrutura do Repositório
+## 🚀 Como executar o projeto
 
-```
-📁 lab-agente-financeiro/
-│
-├── 📄 README.md
-│
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
-│
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
-│
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
-│
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
-```
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/FelipeApSAr/lab-chatbot.git
+   cd lab-chatbot
+   ```
+2. Crie e ative um ambiente virtual (opcional, mas recomendado):
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # Windows: venv\Scripts\activate
+   ```
+3. Instale as dependências do projeto (ajuste conforme o `requirements.txt` do repositório):
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Configure sua chave de API do provedor de LLM escolhido como variável de ambiente, por exemplo:
+   ```bash
+   export OPENAI_API_KEY="sua_chave_aqui"
+   ```
+5. Execute a aplicação (exemplo com Streamlit):
+   ```bash
+   streamlit run src/app.py
+   ```
 
----
 
-## Dicas Finais
+## 📊 Avaliação e métricas
 
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+A qualidade do agente é avaliada considerando:
+
+- **Precisão/assertividade** das respostas geradas;
+- **Taxa de respostas seguras**, sem alucinações;
+- **Coerência** das respostas com o perfil e contexto do cliente.
+
+Detalhes completos em [`docs/04-metricas.md`](./docs/04-metricas.md).
+
+## 🎯 Créditos
+
+Este repositório é um **fork** do desafio de laboratório da [Digital Innovation One](https://github.com/digitalinnovationone/dio-lab-bia-do-futuro), adaptado por [@FelipeApSAr](https://github.com/FelipeApSAr).
+
+## 📄 Licença
+
+Este projeto segue os termos de licença do repositório original. Consulte o repositório para mais detalhes.
