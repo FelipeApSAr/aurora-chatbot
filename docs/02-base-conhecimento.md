@@ -2,12 +2,10 @@
 
 ## Dados Utilizados
 
-Descreva se usou os arquivos da pasta `data`, por exemplo:
-
 | Fonte | Utilização no Agente |
 |--------|---------------------|
-| Yahoo Finance | Coleta de dados financeiros e notícias |
-| GDELT | Coleta de informações sobre ativos financeiros |
+| Pacote yfinance | Coleta de notícias sobre o mercado financeiro |
+
 
 
 ---
@@ -24,28 +22,14 @@ Não irei utilizar os dados fornecidos, mas sim adaptar o uso de bibliotecas par
 
 ### Como os dados são carregados?
 > Descreva como seu agente acessa a base de conhecimento.
+O agente terá a capacidade de chamar uma lista de funções. Dentro dessa lista, há funções de coleta de notícias via yfinance (que fornece um resumo) e de coleta da notícia completa pelo link do yfinance.
 
-O agente será integrado com ferramentas que permitam a execução de programas em python. Uma vez que isso é possível, será possível que o agente crie, execute e obtenha informações advindas das bases de dados Yahoo Finance e de notícias a partir do GDELT. Com isso o agente será capaz de trazer informações e executar pequenos códigos que tragam pequenas análises de código.
 
 ### Como os dados são usados no prompt?
 > Os dados vão no system prompt? São consultados dinamicamente?
 
-Os dados serão consultados e mantidos em uma pequena memória caso o tema seja o mesmo (para evitar novas requisições quando não é necessário). Uma vez com os dados, o LLM será capaz de trazer informações de sentimento do mercado ou informações importantes trazidas pela consulta. O modelo também será capaz de executar pequenos scripts que realizem cálculos com os dados utilizados e trazer pequenas informações/insights para o analista utilizando o agente.
+Os dados são digitados pelo usuário. No caso, é utilizado um Ticker compatível com o yfinance. Com isso o modelo coleta notícias e é capaz de interpretá-las.
 
 ---
 
-## Exemplo de Contexto Montado
 
-> Mostre um exemplo de como os dados são formatados para o agente.
-
-```
-Dados do Cliente:
-- Nome: João Silva
-- Perfil: Moderado
-- Saldo disponível: R$ 5.000
-
-Últimas transações:
-- 01/11: Supermercado - R$ 450
-- 03/11: Streaming - R$ 55
-...
-```
